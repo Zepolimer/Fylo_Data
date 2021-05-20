@@ -1,0 +1,234 @@
+:root {
+    --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+@keyframes slide-in {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 75%;
+    }
+  }
+  @keyframes cursor-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+* {
+    margin: 0 0;
+    padding: 0 0;
+    border: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/bg-mobile.png);
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+    body {
+        background-image: url(./images/bg-mobile.png);
+        background-size: 200% 260%;
+    }
+}
+
+.main-container {
+    margin: 0 auto;
+}
+
+/* FIRST CONTAINER WITH LOGO & ICONS */
+.fyloContainer {
+    background-color: var(--dark-blue);
+    width: 88%;
+    max-width: 328px;
+    height: 200px;
+    margin: 200px auto 15px auto;
+    border-radius: 10px 100px 10px 10px;
+}
+
+.logo {
+    margin: 40px 40px 30px 40px;
+}
+.icons { margin: 0 0 0 34px; }
+.icons img { margin: 0 6px; }
+.icon {
+    padding: 12px 14px;
+    background-color: var(--very-dark-blue);
+    border-radius: 10px;
+}
+.document {
+    padding: 14px 14px;
+}
+.upload {
+    padding: 16px 14px;
+}
+
+
+/* SECOND CONTAINER WITH INPUT TYPE = RANGE */
+.gbContainer {
+    background-color: var(--dark-blue);
+    width: 88%;
+    max-width: 328px;
+    height: 175px;
+    margin: 0px auto 20px auto;
+    border-radius: 10px;
+    color: var(--pale-blue);
+    text-align: center;
+}
+
+.used {
+    font-weight: 400;
+    padding-top: 50px;
+    margin: 0px 0 15px 0;
+}
+.used span {
+    font-weight: 700;
+}
+p{
+    font-size: 12px;
+    font-weight: 700;
+}
+.minmax {
+    width: 250px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* FAKE PROGRESS BAR */
+.blackBar {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 250px;
+    height: 1.4em;
+    border-radius: 10px;
+    background: var(--very-dark-blue);
+    z-index: 1;
+}
+.gradientBar {
+    width: 190px;
+    height: 1em;
+    border-radius: 10px;
+    background: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+
+    animation-duration: 3s;
+    animation-name: slide-in;
+}
+.cursor{
+    width: 0.75em;
+    height: 0.75em;
+    background: white;
+    border-radius: 20rem;
+    z-index: 5;
+    transform: translateX(-2px);
+
+    animation-duration: 3s;
+    animation-name: cursor-in;
+}
+
+
+/* WHITE CONTAINER WITH SIZE OF GB LEFT */
+.gbLeft {
+    background-color: white;
+    width: 178px;
+    height: 73px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    margin: 0 auto;
+
+    position: relative;
+    top: -55px;
+}
+.gbLeft span {
+    color: var(--very-dark-blue);
+    font-size: 38px;
+    margin-right: 10px;
+}
+
+
+
+/* FOOTER */
+.attribution { font-size: 11px; text-align: center; color: var(--grayish-blue); }
+.attribution a { color: var(--pale-blue); text-decoration: none; }
+
+
+@media (min-width: 1024px) {
+    body {
+        background-image: url(./images/bg-desktop.png);
+        background-size: 100%;
+        background-position: top 101% left 0%;
+        background-color: var(--very-dark-blue);
+        width: 100%;
+    }
+    .main-container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 357px 540px;
+        margin: 31.40vh 0;
+        justify-content: center;
+        align-content: center;
+
+        gap: 4px;
+        grid-auto-flow: column;
+    }
+
+    .fyloContainer {
+        margin: 15px 0 0 0px;
+        max-width: 353px;
+        width: 100%;
+        height: 185px;
+        grid-column: 1;
+    }
+    .logo {
+        margin: 30px 40px 30px 40px;
+    }
+    .gbContainer {
+        text-align: left;
+        margin: 50px 0 0 30px;
+        height: 150px;
+        max-width: 538px;
+        width: 538px;
+        grid-column: 2;
+    }
+    .used {
+        margin: 0px 0 15px 40px;
+    }
+    .blackBar, .minmax {
+        width: 460px;
+    }
+    .gradientBar {
+        width: 350px;
+    }
+    .gbLeft {
+        grid-column: 2;
+        position: relative;
+        top: -190px;
+        left: 170px;
+    }
+}
