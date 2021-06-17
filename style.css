@@ -33,7 +33,7 @@ body {
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url(./images/bg-mobile.png);
     background-size: 100% 120%;
     background-repeat: no-repeat;
@@ -47,16 +47,21 @@ body {
 }
 
 .main-container {
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
 }
 
 /* FIRST CONTAINER WITH LOGO & ICONS */
 .fyloContainer {
     background-color: var(--dark-blue);
     width: 88%;
-    max-width: 328px;
+    max-width: 400px;
     height: 200px;
-    margin: 200px auto 15px auto;
+    margin: 0 auto 15px auto;
     border-radius: 10px 100px 10px 10px;
 }
 
@@ -82,7 +87,7 @@ body {
 .gbContainer {
     background-color: var(--dark-blue);
     width: 88%;
-    max-width: 328px;
+    max-width: 400px;
     height: 175px;
     margin: 0px auto 20px auto;
     border-radius: 10px;
@@ -160,7 +165,6 @@ p{
     text-transform: uppercase;
     font-weight: 700;
     font-size: 13px;
-    margin: 0 auto;
 
     position: relative;
     top: -55px;
@@ -174,7 +178,11 @@ p{
 
 
 /* FOOTER */
-.attribution { font-size: 11px; text-align: center; color: var(--grayish-blue); }
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    color: var(--grayish-blue);
+}
 .attribution a { color: var(--pale-blue); text-decoration: none; }
 
 
@@ -184,13 +192,11 @@ p{
         background-size: 100%;
         background-position: top 101% left 0%;
         background-color: var(--very-dark-blue);
-        width: 100%;
     }
     .main-container {
         display: grid;
         width: 100%;
         grid-template-columns: 357px 540px;
-        margin: 31.40vh 0;
         justify-content: center;
         align-content: center;
 
@@ -231,4 +237,18 @@ p{
         top: -190px;
         left: 170px;
     }
+    .attribution { 
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+        transform: translate(-50%, 50%);
+    }
 }
+
+@media (min-height: 1330px) {
+    body {
+        background-image: url(./images/bg-desktop.png);
+        background-size: 220%;
+        background-position: top 101% left 0%;
+        background-color: var(--very-dark-blue);
+    }
